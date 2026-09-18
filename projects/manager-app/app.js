@@ -21,6 +21,12 @@ const debugLog = (eventName, details) => {
   if (DEBUG_MODE) console.log(`[debug] ${eventName}`, details);
 };
 
+const formatLocalDate = (date) => [
+  date.getFullYear(),
+  String(date.getMonth() + 1).padStart(2, "0"),
+  String(date.getDate()).padStart(2, "0")
+].join("-");
+
 const createId = () => `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
 const showMessage = (text, type = "error") => {
@@ -231,7 +237,7 @@ exportButton.addEventListener("click", () => {
   const objectUrl = URL.createObjectURL(blob);
   const downloadLink = document.createElement("a");
   downloadLink.href = objectUrl;
-  downloadLink.download = `云南旅行收藏-${new Date().toISOString().slice(0, 10)}.json`;
+  downloadLink.download = `云南旅行收藏-${formatLocalDate(new Date())}.json`;
   document.body.appendChild(downloadLink);
   downloadLink.click();
   downloadLink.remove();
