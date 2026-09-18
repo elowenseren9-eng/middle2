@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="第五次课交互式任务清单案例。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>交互式任务清单</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">DOM · 事件 · 状态驱动</p>
+      <h1>交互式任务清单</h1>
+      <p>状态保存在数组里，页面由 <code>render()</code> 统一生成。</p>
+    </header>
+
+    <form id="add-form" class="add-form" novalidate>
+      <label for="task-input">新任务</label>
+      <div class="input-row">
+        <input type="text" id="task-input" maxlength="80" placeholder="例如：复习 DOM 事件" autocomplete="off">
+        <button type="submit">添加任务</button>
+      </div>
+      <p class="tip" id="tip" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="toolbar" aria-label="任务筛选">
+      <div class="filters" role="group" aria-label="按状态筛选">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button class="filter-button" type="button" data-filter="active" aria-pressed="false">进行中</button>
+        <button class="filter-button" type="button" data-filter="done" aria-pressed="false">已完成</button>
+      </div>
+      <p id="task-stats" class="task-stats" aria-live="polite"></p>
+    </section>
+
+    <ul id="task-list" class="task-list" aria-label="任务列表"></ul>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

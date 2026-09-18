@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="第五次课自主实践：云南旅行收藏夹。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>云南旅行收藏夹</title>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav-bar" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="云南旅行收藏夹首页">云游志</a>
+      <a href="#collection">我的收藏</a>
+    </nav>
+    <div class="hero-copy" id="top">
+      <p class="eyebrow">YUNNAN TRAVEL NOTES</p>
+      <h1>把想去的云南，<br>收进一张清单。</h1>
+      <p>记录地点、区域、类型、季节、评分和旅行备注。数据只保存在你的浏览器中。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel form-panel" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">NEW PLACE</p>
+          <h2 id="form-title">添加旅行地点</h2>
+        </div>
+        <p>带 <span aria-hidden="true">*</span> 的项目必须填写</p>
+      </div>
+
+      <form id="place-form" novalidate>
+        <div class="form-grid">
+          <label>地点名称 <span>*</span>
+            <input id="place-name" name="name" type="text" maxlength="40" placeholder="例如：普达措国家公园" required>
+          </label>
+          <label>所在区域 <span>*</span>
+            <select id="place-region" name="region" required>
+              <option value="">请选择</option>
+              <option>昆明</option><option>大理</option><option>丽江</option><option>迪庆</option>
+              <option>西双版纳</option><option>红河</option><option>保山</option><option>其他</option>
+            </select>
+          </label>
+          <label>地点类型 <span>*</span>
+            <select id="place-type" name="type" required>
+              <option value="">请选择</option>
+              <option>自然风光</option><option>古城古镇</option><option>民族文化</option>
+              <option>美食体验</option><option>博物馆</option><option>徒步路线</option>
+            </select>
+          </label>
+          <label>推荐季节
+            <select id="place-season" name="season">
+              <option>全年</option><option>春季</option><option>夏季</option><option>秋季</option><option>冬季</option>
+            </select>
+          </label>
+          <label class="rating-field">期待评分 <span>*</span>
+            <input id="place-rating" name="rating" type="number" min="1" max="5" step="1" value="5" required>
+          </label>
+          <label class="wide-field">旅行备注
+            <textarea id="place-note" name="note" maxlength="160" rows="3" placeholder="交通、看点或想去的理由……"></textarea>
+          </label>
+        </div>
+        <div class="form-footer">
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button id="cancel-edit" class="secondary-button" type="button" hidden>取消编辑</button>
+            <button id="submit-button" class="primary-button" type="submit">添加到收藏</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading collection-heading">
+        <div>
+          <p class="section-kicker">MY COLLECTION</p>
+          <h2 id="collection-title">旅行收藏</h2>
+        </div>
+        <p id="collection-count" aria-live="polite">共 0 个地点</p>
+      </div>
+      <div class="collection-tools">
+        <label class="search-field" for="search-input">
+          <span class="visually-hidden">搜索地点</span>
+          <input id="search-input" type="search" placeholder="搜索名称、区域、类型或备注">
+        </label>
+        <button id="export-button" class="tool-button" type="button">导出 JSON</button>
+        <button id="storage-test-button" class="tool-button experiment-button" type="button">容量实验</button>
+      </div>
+      <p id="storage-result" class="storage-result" role="status" aria-live="polite"></p>
+      <div id="place-list" class="place-grid"></div>
+    </section>
+  </main>
+
+  <footer>第五次课堂实践 · 原生 HTML / CSS / JavaScript</footer>
+  <script src="app.js"></script>
+</body>
+</html>

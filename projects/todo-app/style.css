@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  --ink: #173447;
+  --muted: #64727d;
+  --paper: #fffdf8;
+  --canvas: #edf3f5;
+  --accent: #d47a3a;
+  --accent-dark: #a9511b;
+  --line: #ced9de;
+  font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 18px;
+  color: var(--ink);
+  background: linear-gradient(150deg, #d9e8ed, var(--canvas));
+}
+
+.app-shell {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid rgba(23, 52, 71, .12);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 22px 55px rgba(23, 52, 71, .13);
+}
+
+.eyebrow { margin: 0; color: var(--accent-dark); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+h1 { margin: 8px 0 6px; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.05; }
+header > p:last-child { margin-top: 0; color: var(--muted); }
+code { font-family: Consolas, monospace; }
+
+.add-form { margin-top: 30px; }
+label { display: block; margin-bottom: 7px; font-weight: 750; }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+input, button { min-height: 46px; border-radius: 10px; font: inherit; }
+input { min-width: 0; padding: 0 14px; border: 1px solid var(--line); background: #fff; }
+input:focus { outline: 3px solid rgba(212, 122, 58, .22); border-color: var(--accent); }
+button { padding: 0 18px; border: 0; color: #fff; background: var(--ink); cursor: pointer; font-weight: 700; }
+button:hover { background: #265d7d; }
+.tip { min-height: 24px; margin: 7px 0 0; color: #a12d22; font-size: .92rem; }
+.tip.success { color: #28704b; }
+
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; }
+.filters { display: flex; flex-wrap: wrap; gap: 7px; }
+.filter-button { min-height: 36px; padding: 0 13px; color: var(--ink); border: 1px solid var(--line); background: #fff; font-size: .9rem; }
+.filter-button:hover, .filter-button.active { color: #fff; border-color: var(--ink); background: var(--ink); }
+.task-stats { margin: 0; color: var(--muted); font-size: .9rem; text-align: right; white-space: nowrap; }
+.task-list { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+.task-item, .empty-tip { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.task-item { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; }
+.task-text { overflow-wrap: anywhere; }
+.empty-tip { color: var(--muted); text-align: center; border-style: dashed; }
+.done .task-text { color: var(--muted); text-decoration: line-through; }
+.toggle-button { width: 26px; min-height: 26px; padding: 0; border: 2px solid var(--accent); border-radius: 50%; color: #fff; background: #fff; }
+.toggle-button:hover, .done .toggle-button { background: var(--accent); }
+.delete-button { min-height: 34px; padding: 0 12px; color: #9a3328; background: #fff2ee; font-size: .88rem; }
+.delete-button:hover { color: #fff; background: #9a3328; }
+
+@media (max-width: 520px) {
+  body { padding: 18px 10px; }
+  .app-shell { padding: 24px 18px; border-radius: 18px; }
+  .input-row { grid-template-columns: 1fr; }
+  .toolbar { align-items: flex-start; flex-direction: column; }
+  .task-stats { text-align: left; }
+}
