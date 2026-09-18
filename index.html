@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="软件开发综合实践平时大作业二，聚合第四次和第五次课堂成果。">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <title>软件开发综合实践 平时大作业二</title>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav-bar" aria-label="页面导航">
+      <span class="brand">YNUR · SDEV</span>
+      <a href="#projects">查看作品</a>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">MAJOR ASSIGNMENT 02</p>
+      <h1>软件开发综合实践<br>平时大作业二</h1>
+      <p class="intro">本作品集聚合第四、第五次课堂成果，覆盖 JavaScript 数据处理、函数设计、DOM 操作、事件、表单、动态渲染与本地存储。</p>
+      <div class="summary" aria-label="作品概况">
+        <div><strong>4</strong><span>个可运行作品</span></div>
+        <div><strong>20</strong><span>次原课堂提交</span></div>
+        <div><strong>100%</strong><span>本地重新验证</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="projects">
+    <section class="section-heading">
+      <div>
+        <p class="eyebrow dark">COURSE PROJECTS</p>
+        <h2>课堂成果入口</h2>
+      </div>
+      <p>所有项目均使用原生 HTML、CSS 与 JavaScript，不依赖网络资源。</p>
+    </section>
+
+    <section class="project-grid" aria-label="作品列表">
+      <article class="project-card">
+        <div class="card-number">01</div>
+        <span class="tag">JavaScript 数据与函数</span>
+        <h3>班级成绩统计</h3>
+        <p>数组清洗、平均值、最高分、不及格名单、等级分布和空数组保护。</p>
+        <div class="card-footer">
+          <span>结果输出到 Console</span>
+          <a href="projects/score-stat/">运行作品 <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card featured">
+        <div class="card-number">02</div>
+        <span class="tag">JavaScript 自主实践</span>
+        <h3>校园生活消费月报</h3>
+        <p>清洗 12 条消费数据，完成汇总、排序、正则校验、边界测试与性能实验。</p>
+        <div class="card-footer">
+          <span>结果输出到 Console</span>
+          <a href="projects/calc-tool/">运行作品 <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="card-number">03</div>
+        <span class="tag">DOM 案例复现</span>
+        <h3>交互式任务清单</h3>
+        <p>支持添加、完成切换、删除、状态筛选、统一渲染和 localStorage 持久化。</p>
+        <div class="card-footer">
+          <span>完整页面交互</span>
+          <a href="projects/todo-app/">运行作品 <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project-card featured">
+        <div class="card-number">04</div>
+        <span class="tag">DOM 自主实践</span>
+        <h3>云南旅行收藏夹</h3>
+        <p>六字段信息管理，支持增删改查、本地存储、事件委托、JSON 导出和容量容错。</p>
+        <div class="card-footer">
+          <span>主展示作品</span>
+          <a href="projects/manager-app/">运行作品 <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="run-note" aria-labelledby="run-title">
+      <div>
+        <p class="eyebrow dark">RUN LOCALLY</p>
+        <h2 id="run-title">本地运行</h2>
+      </div>
+      <div>
+        <p>在仓库目录启动 HTTP 服务，然后访问首页。成绩统计与消费月报需要打开浏览器 Console 查看完整输出。</p>
+        <code>py -m http.server 8012</code>
+        <code>http://localhost:8012/</code>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>云南大学信息学院</span>
+    <span>软件开发综合实践 · 平时大作业二</span>
+  </footer>
+</body>
+</html>
